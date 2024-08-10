@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Define the array of numbers
-numbers=(1 2 3 5 6 7 8 9)
+echo "enter the file path :"
+read path
 
-# Find the missing number
-for ((i=1; i<=9; i++));
-   do
- if [[ ! " ${numbers[@]} " =~ " $i " ]];
-     then
-         missing_number=$i
-    break
- fi
-  done
+echo "enter the filename:"
+read filename
 
-echo "missing number is :$missing_number "
+if [ -f "$path/$filename" ]
+     then 
+	     echo "echo file found :"$path/$filename""
+     else
+	     echo "echo file is not in $path "
+fi
