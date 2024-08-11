@@ -8,12 +8,12 @@ if [ -z "$username" ]; then
 fi
 
 if [[ "$username" != "${username^^}" ]]; then
-	echo "username must be uppercase"
+	echo "username is uppercase"
 	exit 1
 fi
 
 if [[ "$username" =~ [[:space:]] ]]; then
-	echo "no spaces present in the username"
+	echo "spaces present in the username"
         exit 1
 fi
 
