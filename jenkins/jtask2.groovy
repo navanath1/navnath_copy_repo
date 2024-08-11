@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage1('BACKUP') {
+        stage('BACKUP') {
             steps {
                 script {
                   sh 'aws s3 cp  /var/lib/jenkins/  s3://billx-server-bucket --recursive'
