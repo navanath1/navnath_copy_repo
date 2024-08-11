@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    environment {
+        BACKUP_DIR = '/jenkins_backup'
+        JENKINS_HOME = '/var/lib/jenkins'
+    }
+
+    stages {
+        stage('Backup') {
+            steps {
+                sh "tar -czf ${BACKUP_DIR}/jenkins_home_$(date +'%Y-%m-%d').tar.gz ${JENKINS_HOME}"
+            }
+        }
+    }
+}
