@@ -5,7 +5,7 @@ pipeline {
         stage('Server Details') {
             steps {
                 script {
-                    echo ">>>>>>>>> Details of hostname, memory, CPU, disk <<<<<<<<<<<"
+                    echo ">>>>>>>>> Details of Hostname, Memory, CPU, Disk <<<<<<<<<<<"
 
                     sh '''
                         name=$(uname -n)
