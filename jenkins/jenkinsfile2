@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Backup') {
             steps {
+                mkdir -p ${BACKUP_DIR}
                 sh "tar -czf ${BACKUP_DIR}/jenkins_home_$(date +'%Y-%m-%d').tar.gz ${JENKINS_HOME}"
             }
         }
