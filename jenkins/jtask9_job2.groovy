@@ -1,11 +1,11 @@
-pipeline {
+opipeline {
     agent any
 
     stages {
         stage('Server Details') {
             steps {
                 script {
-                  sh ''
+                  sh 'echo $n'
                 }
             }
         }
