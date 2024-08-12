@@ -2,18 +2,18 @@ pipeline {
     agent any
 
     environment {
-        JENKINS_HOME = '/var/lib/jenkins'
-        BACKUP_DIR = '/var/backups/jenkins'
-        BACKUP_FILE = 'jenkins_backup.tar.gz'
-    }
-   stages {
-        stage('Backup Jenkins Server') {
+        BACKUP_DIR = 'jenkins_backup'
+          }
+
+    stages {
+        stage('Backup') {
             steps {
-                script {
-                    // Backup Jenkins home directory
-                    sh "tar -czf ${BACKUP_DIR}/${BACKUP_FILE} ${JENKINS_HOME}"
-                }
+                echo "The backup dir is $BACKUP_DIR and ${BACKUP_DIR}"
+                sh '''
+                sudo -S mkdir -p /$BACKUP_DIR
+                tar -czf /${BACKUP_DIR}/jenkins_home_$(date +'%Y-%m-%d').tar.gz ${JENKINS_HOME}
+                '''
             }
         }
     }
-
+}
