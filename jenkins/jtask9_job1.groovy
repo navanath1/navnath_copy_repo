@@ -5,7 +5,7 @@ pipeline {
         stage('Server Details') {
             steps {
                 script {
-                  sh ''
+                  sh 'SET n="job1"'
                 }
             }
         }
