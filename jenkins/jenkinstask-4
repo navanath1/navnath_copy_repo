@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Validation') {
+            steps 
+                sh """
+                    #!/bin/bash
+                    input="$userInput"
+
+                    if [ -z "$input" ]
+                        then
+                        echo "Input cannot be empty"
+                        exit 1
+                    
+                    echo "Valid input: $input"
+                """
+            }
+        }
+    }
