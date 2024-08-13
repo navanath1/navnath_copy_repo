@@ -6,7 +6,7 @@ pipeline{
         stages{
                 stage('build'){
                         steps{
-                          sh 'echo "Build is successful on Build stage"'
+                          sh 'echo "Build is successful on Build stage `hostname`"'
                         }
                  }
                  stage('test'){
