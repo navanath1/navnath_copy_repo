@@ -5,7 +5,7 @@ pipeline {
         stage('Server Details') {
             steps {
                 script {
-                  sh 'SET n="job1"'
+                  sh 'env.v1="this is v1 from job91"'
                 }
             }
         }
