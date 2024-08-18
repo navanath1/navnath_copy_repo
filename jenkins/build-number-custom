@@ -6,10 +6,10 @@ pipeline {
             steps {
                 script {
                     // Set the offset value
-                    def offset = 5
+                    def offset = "first"
 
                     // Set a custom display name for the build  
-                    currentBuild.displayName = "#" + (currentBuild.number + offset)
+                    currentBuild.displayName = "pass" + (currentBuild.number + offset)
                     
                     // Print the custom display name to the console
                     echo "Custom build display name: ${currentBuild.displayName}"
@@ -18,3 +18,5 @@ pipeline {
         }
     }
 }
+
+
