@@ -8,7 +8,7 @@ pipeline {
                     try {
                        sh'ech ""fail'
                     } catch (Exception e) {
-                       sh "echo 'Stage failed with exception: ${e.message}'"
+                       sh "echo 'Stage failed with exception: ${e.message}'"// why " and ' doubt here
                     }
                 }
             }
