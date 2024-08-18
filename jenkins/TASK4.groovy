@@ -25,5 +25,19 @@ pipeline {
                 echo "Environment: ${params.ENVIRONMENT}"
             }
         }
-    }
+      stage('set the build number') {
+            steps {
+                script {
+                   
+                    def offset = "-"
+
+                   
+                    currentBuild.displayName = (currentBuild.number + offset) + "pass"
+                    
+                    
+                    echo "Custom build display name: ${currentBuild.displayName}"
+                } 
+            }
+        }
+    } 
 }
