@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'master' }
-
+// from stack and chatgpt combination trying to implement 
     stages {
         stage('Example') {
             steps {
@@ -8,7 +8,7 @@ pipeline {
                     // Set the offset value
                     def offset = 5
 
-                    // Set a custom display name for the build
+                    // Set a custom display name for the build  
                     currentBuild.displayName = "#" + (currentBuild.number + offset)
                     
                     // Print the custom display name to the console
