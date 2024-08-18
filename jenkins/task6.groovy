@@ -32,6 +32,7 @@ pipeline {
             stage('try@stage1') {
                 steps {
                     script {
+                      sh'sudo yum install python3 -y'
                       py'print("nitin")'
                     }
                 }
