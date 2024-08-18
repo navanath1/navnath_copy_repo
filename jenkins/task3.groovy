@@ -60,13 +60,13 @@ pipeline {
             agent{label 'salve1'}
             steps {
                 script {
-                  sh '''echo "5 from slave" 
+                  sh '''echo "1 from slave" 
                         uname'''
                 }
             }
         }
           stage('s2') {
-            agent{label 'salve1 '}
+            agent{label 'salve1'}
             steps {
                 script {
                   sh '''echo "2 from slave" 
@@ -75,7 +75,7 @@ pipeline {
             }
         }
           stage('s3') {
-            agent{label 'salve1 '}
+            agent{label 'salve1'}
             steps {
                 script {
                   sh '''echo "3 from salve " 
@@ -84,7 +84,7 @@ pipeline {
             }
         }
           stage('s4') {
-            agent{label 'salve1 '}
+            agent{label 'salve1'}
             steps {
                 script {
                   sh '''echo "4 from salve " 
@@ -93,7 +93,7 @@ pipeline {
             }
         }
           stage('s5') {
-            agent{label 'salve1 '}
+            agent{label 'salve1'}
             steps {
                 script {
                   sh '''echo "5 from salve " 
