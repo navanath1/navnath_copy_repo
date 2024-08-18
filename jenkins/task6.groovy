@@ -6,11 +6,9 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'sudo yum install python3 -y'
-                        sh 'python3 -c "print(\'nitin\')"'
+                       sh'ech ""fail'
                     } catch (Exception e) {
-                        currentBuild.result = 'FAILURE'
-                        error "Stage failed with exception: ${e}"
+                         "Stage failed with exception: ${e}"
                     }
                 }
             }
