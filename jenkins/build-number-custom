@@ -1,0 +1,20 @@
+pipeline {
+    agent { label 'master' }
+
+    stages {
+        stage('Example') {
+            steps {
+                script {
+                    // Set the offset value
+                    def offset = 5
+
+                    // Set a custom display name for the build
+                    currentBuild.displayName = "#" + (currentBuild.number + offset)
+                    
+                    // Print the custom display name to the console
+                    echo "Custom build display name: ${currentBuild.displayName}"
+                }
+            }
+        }
+    }
+}
