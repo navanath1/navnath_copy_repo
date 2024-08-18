@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Server Details') {
+        stage('String matching parameter') {
             steps {
                 script {
                   sh '''if [&string -ee "nitin" ] then echo "correct" else echo "wrong" fi'''
