@@ -2,7 +2,7 @@ pipeline {
     agent any
    
     parameters {
-        string(name: 'STRING_PARAM', defaultValue: 'default', description: 'String to match')
+        string(name: 'string', defaultValue: 'default', description: 'String to match')
     }
    
     stages {
@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Access the Jenkins parameter
-                    def stringParam = env.STRING_PARAM
+                    def stringParam = env.string
 
                     // Use correct shell syntax for string comparison
                     sh """
