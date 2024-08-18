@@ -20,15 +20,7 @@ pipeline {
                 }
             }
         }
-          stage('m3') {
-            agent{label 'master'}
-            steps {
-                script {
-                  sh '''echo "3 from master" 
-                        uname'''
-                }
-            }
-        }
+          
           stage('m3') {
             agent{label 'master'}
             steps {
