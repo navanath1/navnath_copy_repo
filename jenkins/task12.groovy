@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         parallel{              ///////////////same from task 3 but using parallel to work at same time 
+                                    ///error why
         stage('m1') {
             agent{label 'master'}
             steps {
