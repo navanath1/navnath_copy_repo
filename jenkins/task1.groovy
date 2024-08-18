@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Server Details of main ') {
-            agent{label "Built-In Node"}
+            agent{label 'master'}
             steps {
                 script {
                     echo ">>>>>>>>> Details of Hostname, Memory, CPU, Disk <<<<<<<<<<<"
@@ -31,7 +31,7 @@ pipeline {
         }
 
    stage('Server Details of salve ') {
-            agent{label "Node1"}
+            agent{label 'Node1'}
             steps {
                 script {
                     echo ">>>>>>>>> Details of Hostname, Memory, CPU, Disk <<<<<<<<<<<"
