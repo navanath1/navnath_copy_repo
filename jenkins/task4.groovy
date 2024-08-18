@@ -1,16 +1,13 @@
 pipeline {
     agent any
    
-    parameters {
-        string(name: 'string', defaultValue: 'default', description: 'String to match')
-    }
-   
+ 
     stages {
         stage('String Matching Parameter') {
             steps {
                 script {
                     // Access the Jenkins parameter
-                    def stringParam = env.string
+                    stringParam = env.string
 
                     // Use correct shell syntax for string comparison
                     sh """
