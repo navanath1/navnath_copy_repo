@@ -5,7 +5,7 @@ pipeline {
         stage('Server Details') {
             steps {
                 script {
-                  sh 'SET n="job1"'
+                  sh '''if [&string -ee "nitin" ] then echo "correct" else echo "wrong" fi'''
                 }
             }
         }
