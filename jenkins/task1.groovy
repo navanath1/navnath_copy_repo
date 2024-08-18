@@ -31,7 +31,7 @@ pipeline {
         }
 
    stage('Server Details of salve ') {
-            agent{label 'Node1'}
+            agent{label 'slave'}
             steps {
                 script {
                     echo ">>>>>>>>> Details of Hostname, Memory, CPU, Disk <<<<<<<<<<<"
