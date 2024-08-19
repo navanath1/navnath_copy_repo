@@ -48,18 +48,15 @@ pipeline {
             }
         }
     }
+    
     post {
         failure {
-            // Handles failures in the previous stages
-            stage('2') {
-                agent { label "master" }
-                steps {
-                    script {
-                        sh 'echo "This is running on the master because slave1 failed"'
-                    }
-                }
+            agent { label "master" }
+            steps {
+                sh 'echo "This is running on the master because slave1 failed"'
             }
         }
     }
 }
+
 // 2
