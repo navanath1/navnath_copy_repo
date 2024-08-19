@@ -3,9 +3,10 @@ pipeline {
 
     stages {
         stage('Server Details') {
+            job1="this is job1 variable"
             steps {
                 script {
-                  sh 'env.v1="this is v1 from job91"'
+                  sh '${job1}'
                 }
             }
         }
