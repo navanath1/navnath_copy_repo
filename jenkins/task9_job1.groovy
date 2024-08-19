@@ -6,7 +6,7 @@ pipeline {
             job1="this is job1 variable"
             steps {
                 script {
-                  sh '${job1}'
+                  sh ' echo "${job1}" '
                 }
             }
         }
