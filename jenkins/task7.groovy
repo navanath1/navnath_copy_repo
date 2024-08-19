@@ -2,10 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Server Details') {
+        stage('try catch sample') {
             steps {
                 script {
-                  sh 'SET n="job1"'
+                    try {
+                                sh 'eho "This is not waorking"' //wantedlly error in echo
+                            }
+                        }
+                    } catch (Exception e) {
+                        echo "catch shows what is problem ${e.message}"
+
+                    }
                 }
             }
         }
