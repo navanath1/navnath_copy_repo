@@ -6,7 +6,7 @@ pipeline {
         stage('Server Details') {
             steps {
                 script {
-                  sh 'echo "this is job9b using varable job9a ${job1}"'
+                  sh 'echo "this is job9b using varable job9a ${job1}" '
                 }
             }
         }
