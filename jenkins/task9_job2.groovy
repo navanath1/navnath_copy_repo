@@ -1,6 +1,7 @@
+@task9_job1
+
 pipeline {
     agent any
-@task9_job1
     stages {
         stage('Server Details') {
             steps {
