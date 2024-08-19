@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'master' }
+    agent any
 // from stack and chatgpt combination trying to implement 
     stages {
         stage('Example') {
