@@ -5,7 +5,7 @@ pipeline {
         stage('DEBUG') {
             steps {
                 script {
-                  sh 'eho "this fails " || echo "this is runs using ||"'
+                  sh 'echo "this fails " || echo "this is runs using ||"'
                 }
             }
         }
