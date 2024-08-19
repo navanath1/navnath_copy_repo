@@ -1,11 +1,23 @@
 pipeline {
-    agent { label "master"|| label"slave1"}
+    agent none
 
     stages {
-        stage('DEBUG') {
+        stage('1') {
             steps {
                 script {
-                  sh 'echo "this fails " || echo "this is runs using ||"'
+                    try{
+                  sh 'eco "this fails " || echo "this is runs using ||"'}
+                    catch (e){ 
+                        sh 'echo "$(e)"'
+                        
+                    }
+                }
+            }
+        }
+          stage('2') {
+            steps {
+                script {
+                  sh 'echo "this fails" '
                 }
             }
         }
