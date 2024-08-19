@@ -13,7 +13,7 @@ pipeline {
                     
                     // Print the custom display name to the console
                     echo "Custom build display name: ${currentBuild.displayName}"
-                }
+                
             }
         }
     }
