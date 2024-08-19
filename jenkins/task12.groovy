@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+     stage('All_tests'){
         parallel{              
             stage('m1') {
             agent{label 'master'}
@@ -95,6 +96,7 @@ pipeline {
             }
         }
         }
+     }  
         
     }
 }
