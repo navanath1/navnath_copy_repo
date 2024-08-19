@@ -6,12 +6,13 @@ pipeline {
             steps {
                 script {
                     
-                    try{
-                  sh 'eco "this fails " || echo "this is runs using ||"'}
-                    catch (e){ 
-                        sh 'echo "$(e)"'
+                  //   try{
+                  // sh 'eco "this fails " || echo "this is runs using ||"'}
+                  //   catch (e){ 
+                  //       sh 'echo "$(e)"'
                         
-                    }
+                  //   }
+                    sh 'ec'
                 }
             }
         }
