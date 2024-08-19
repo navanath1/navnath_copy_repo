@@ -1,4 +1,4 @@
-@Library(task9_job1)
+@Library('task9_job1')
 
 pipeline {
     agent any
