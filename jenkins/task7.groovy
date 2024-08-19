@@ -6,15 +6,14 @@ pipeline {
             steps {
                 script {
                     try {
-                                sh 'eho "This is not waorking"' //wantedlly error in echo
-                        
+                        // Intentional typo in echo
+                        sh 'eho "This is not working"' 
                     } catch (Exception e) {
-                        echo "catch shows what is problem ${e.message}"
-
+                      
+                        echo "Catch block shows the problem: ${e.message}"
                     }
-            }
                 }
             }
         }
+    }
 }
-
