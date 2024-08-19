@@ -1,2 +1,2 @@
-8,9,7 are pending
+8,9,10 are pending
 
