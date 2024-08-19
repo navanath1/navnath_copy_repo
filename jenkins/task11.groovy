@@ -24,6 +24,6 @@ pipeline {
         }
     }
 }
-// warning here other place like decartive try  error will not work every in side script we can try catch and inside that we can use stages 
+// warning here other place like decartive try  error will not work every in side stages,in script we can try catch and inside that we can use stages 
 // but for offline we need to use timeout beacuse there is not way to check node is offline or not above code is the best way
 // to find node offline 
