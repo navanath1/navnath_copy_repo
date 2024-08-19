@@ -6,8 +6,10 @@ pipeline {
            
             steps {
                 script {
-                    job1="this is job1 variable"
-                  sh ' echo "${job1}" '
+                    def value(){
+                        return "hi"
+                    }
+                   
                 }
             }
         }
