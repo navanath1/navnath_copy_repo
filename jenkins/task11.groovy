@@ -1,10 +1,11 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('1') {
             steps {
                 script {
+                    
                     try{
                   sh 'eco "this fails " || echo "this is runs using ||"'}
                     catch (e){ 
