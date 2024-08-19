@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         parallel{              ///////////////same from task 3 but using parallel to work at same time 
