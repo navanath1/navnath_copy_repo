@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    agent {label "master"||"slave1"}
 
     stages {
-        stage('Server Details') {
+        stage('DEBUG') {
             steps {
                 script {
-                  sh 'SET n="job1"'
+                  sh 'eho "this fails " || echo "this is runs using ||"'
                 }
             }
         }
