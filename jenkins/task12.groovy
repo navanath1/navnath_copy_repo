@@ -1,26 +1,31 @@
 pipeline {
-     agent none
-      stages{
-        stage('Build on NODE1 OR NODE2') {
-          agent {
-            label 'NODE1 || NODE2'
-          }
-          steps{
-                    sh '''
-                    echo "Building on $(NODE_NAME}"
-                     '''
-          }
+    agent any
+
+    stages {
+     stage('All_tests'){
+        parallel{              
+            stage('stage1') {
+            agent{
+                label 'slave1'
+                }
+            steps {
+                script {
+                    sh 'touch file1.sh'
+                       }
+                 }
         }
-        stage('Test on NODE3 || NODE4') {
-          agent {
-            lable 'NODE3 || NODE4'
-          }
-          steps{
-            sh '''
-            echo "Testing on $(NODE_NAME)"
-            '''
-          }
+        stage('stage2') {
+            agent{
+                label 'slave2'
+                }
+            steps {
+                script {
+                    sh 'touch file2.sh'
+                       }
+                 }
+            }
+         }
        }
-  }
-}  
+    }
+ }
         
