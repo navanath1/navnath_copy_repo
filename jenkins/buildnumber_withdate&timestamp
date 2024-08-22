@@ -11,7 +11,7 @@ pipeline {
                     def dateTime = new Date().format("yyyy-MM-dd HH:mm:ss")
 
                     // Check the current build result
-                    if (currentBuild.result == null || currentBuild.result == 'SUCCESS' || currentBuild.result == 'FAILURE') {
+                    if (currentBuild.result == null || currentBuild.result == 'SUCCESS' ) {
                         // Set the display name for a successful build
                         currentBuild.displayName =  (currentBuild.number + offset) + "pass" + " - " + dateTime
                     } else {
