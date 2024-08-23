@@ -8,7 +8,7 @@ pipeline {
                script {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                        
-                        cho 'Executing Stage 1'
+                        echo 'Executing Stage 1'
                         error('Stage 1 failed ')
                     }
                }
