@@ -17,6 +17,3 @@ pipeline {
     }
 }
 
-def isMavenInstalled() {
-    return sh(script: 'mvn -v', returnStatus: true) == 0
-}
