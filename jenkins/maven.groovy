@@ -5,15 +5,10 @@ pipeline {
         stage('Install Maven') {
             steps {
                 script {
-                    if (!isMavenInstalled()) {
-                        sh 'sudo yum install -y maven'
-                        echo 'Maven installed successfully'
-                    } else {
-                        echo 'Maven already installed'
-                    }
+                                        sh 'sudo yum install -y maven'
+                   
+                      }
                 }
             }
         }
-    }
 }
-
