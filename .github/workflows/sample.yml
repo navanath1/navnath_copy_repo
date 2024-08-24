@@ -40,4 +40,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: 
-        run: echo "test is sucessful on `hostname'"
+        run: echo "hello from my `hostname'"
