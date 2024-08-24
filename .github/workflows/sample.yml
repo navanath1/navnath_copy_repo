@@ -48,7 +48,7 @@ jobs:
       steps:
         - uses: actions/checkout@v4
         - name: deploy verify
-          run: echo "deploy stage successful "
+          run: echo "deploy stage successful in `hostname` "
   
 
 
