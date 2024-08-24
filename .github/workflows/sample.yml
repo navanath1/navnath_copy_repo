@@ -35,9 +35,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   test:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest 
-    steps:
-    - uses: actions/checkout@v4
-    - name: 
-        run: echo "hello from my `hostname'"
+      runs-on: server2
+      needs: [ build ]
+      steps:
+        - uses: actions/checkout@v4
+        - name: test verify
+          run: echo "Hostname is `hostname`"  
