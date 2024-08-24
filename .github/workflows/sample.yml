@@ -41,7 +41,7 @@ jobs:
         - uses: actions/checkout@v4
         - name: test verify
           run: echo "Hostname is `hostname`"  
- deploy:
+  deploy:
       runs-on: ubuntu-latest
       
       steps:
