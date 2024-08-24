@@ -7,4 +7,4 @@ cpuInfo=$(lscpu)
 echo "1  Server name : $nameinfo"
 echo "2 memory information : $memoryinfo "
 echo "3 diskinfo : $diskinfo "
-echo " cpu Information : $cpuInfo "
+echo "4 cpu Information : $cpuInfo "
