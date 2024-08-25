@@ -1,17 +1,13 @@
+Library("my-shared-library") _
 pipeline {
     agent any
 
     stages {
-        stage('Call Script') {
+        stage('Greetings') {
             steps {
-                sh '''
-                  source  /root/devops/git/7AM_Devops/jenkins/file.sh
-
-                    echo "VARIABLE1: $variable1"
-
-                    echo "VARIABLE2: $variable2"
-                '''
+                //define helloWorld using shared library in VAR Directory
+                helloWorld()
             }
-        
-    }
-
+        }  
+     }
+}
