@@ -42,6 +42,7 @@ jobs:
         - name: test verify
           run: echo "Hostname is `hostname`"  
   deploy:
+      needs: [ build ]
       runs-on: ubuntu-latest
      
       
