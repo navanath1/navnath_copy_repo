@@ -1,18 +1,29 @@
 pipeline {
-  ageny any 
-       stages{
-        stage('run on slave1') {
-        agent {
-          lable 'slave1'
-             }
-        steps{
-          script{
-            echo "running on node1 at `hostname` "
-               }
+    agent none
+
+    stages {
+        stage('Run on NODE1') {
+            agent { label 'NODE1' }
+            steps {
+                script {
+                    echo "Running on NODE1"
+                    sh 'exit 1' // Simulate failure on NODE1
+                }
             }
-      retry(2){
-        label 'slave2'
-      }
+            post {
+                failure {
+                    echo "NODE1 failed, running on NODE2"
+                    currentBuild.result = 'UNSTABLE'
+                }
+            }
+        }
+        stage('Run on NODE2') {
+            agent { label 'NODE2' }
+            steps {
+                script {
+                    echo "Running on NODE2"
+                }
+            }
+        }
     }
-  }
 }
