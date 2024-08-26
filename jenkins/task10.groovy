@@ -5,7 +5,9 @@ pipeline {
         stage('Create artifacts') {
             steps {
                 script {
-                     def offset = "-"
+                  script {
+                    // Set the offset value
+                    def offset = "-"
 
                     // Get the current date and time in the desired format
                     def dateTime = new Date().format("yyyy-MM-dd HH:mm:ss")
@@ -17,7 +19,11 @@ pipeline {
                     } else {
                         // Set the display name for a failed build
                         currentBuild.displayName =  (currentBuild.number + offset) + "fail" + " - " + dateTime
-                   
+                    }
+                    
+                    // Print the custom display name to the console
+                    echo "Custom build display name: ${currentBuild.displayName}"
+                      
                     sh 'echo "Hello World" > artifact.txt'
                     sh 'echo "This is another artifact" > artifact2.txt'
 
