@@ -2,6 +2,18 @@ pipeline{
         agent any
 
         stages{
+                stage('clean_up'){
+                        steps{
+                                sh '''
+                                  docker conatiner ls -a | grep c1
+                                  if [ $? == 0 ] ; then 
+                                  docker container rm -f c1; 
+                                  fi
+
+                                  docker image rm app_image:1.0
+                                '''
+                        }
+                }
                 stage('build'){
                         steps{
                           sh '''
