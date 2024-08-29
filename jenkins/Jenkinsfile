@@ -6,7 +6,7 @@ pipeline{
                         steps{
                           sh '''
                           echo "Building Docker image on  `hostname`"
-                          docker image build -t app_image:1.0 ${WORKSPACE}/docker/Dockerfile
+                          docker image build -t app_image:1.0 ${WORKSPACE}/docker/
                           
                           '''
                         }
